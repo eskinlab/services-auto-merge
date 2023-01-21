@@ -1,0 +1,48 @@
+{
+    "services_common": [
+        {
+            "serviceName": "",
+            "serviceGroup": "",
+            "repoMaintainer": "[name]",
+            "telegramMaintainer": "[@name1] [@name2]"
+        },
+        {
+            "serviceName": "",
+            "serviceGroup": "",
+            "repoMaintainer": "",
+            "telegramMaintainer": ""
+        }
+    ],
+    "services_mr": [
+        {
+            "serviceName": "",
+            "serviceGroup": "KK",
+            "repoMaintainer": "",
+            "telegramMaintainer": ""
+        },
+        {
+            "serviceName": "",
+            "serviceGroup": "",
+            "repoMaintainer": "",
+            "telegramMaintainer": ""
+        }
+    ],
+    "services_branch_set": [
+        {
+            "serviceName": "",
+            "serviceGroup": "",
+            "repoMaintainer": "",
+            "telegramMaintainer": "",
+            "branchFrom": "test1",
+            "branchTo": "test2"
+        },
+        {
+            "serviceName": "",
+            "serviceGroup": "",
+            "repoMaintainer": "",
+            "telegramMaintainer": "",
+            "branchFrom": "test1",
+            "branchTo": "test2"
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+image: python:3.9.7
+
+variables:
+  AUTO_MERGE_SCRIPT: $CI_PROJECT_DIR/src/auto-merge/main.py
+  PARAMETERS: --system=${SYSTEM} --branch_from=${BRANCH_FROM} --branch_to=${BRANCH_TO} --up_gradle_version=${UP_GRADLE_VERSION} --rm_snapshot=${RM_SNAPSHOT} --up_semantic_version=${UP_SEMANTIC_VERSION}
+
+stages:
+  - commons
+  - services
+  - services_mr
+  - emulators
+  - models
+
+default:
+  before_script:
+    - python3 -m pip install --upgrade pip
+    - pip install -r $CI_PROJECT_DIR/src/auto-merge/requirements.txt
+    - pip install -r $CI_PROJECT_DIR/src/upd-gradle-versions/requirements.txt
+
+  tags:
+    - openshift
+    - kk
+
+migrate_commons:
+  when: manual
+  stage: commons
+  only:
+    variables:
+      - $BRANCH_FROM
+      - $BRANCH_TO
+      - $UP_VERSION
+      - $RM_SNAPSHOT
+  script:
+      - python $AUTO_MERGE_SCRIPT $PARAMETERS
+
+migrate_services:
+  when: manual
+  stage: services
+  only:
+    variables:
+      - $BRANCH_FROM
+      - $BRANCH_TO
+      - $UP_VERSION
+      - $RM_SNAPSHOT
+  script:
+      - python $AUTO_MERGE_SCRIPT $PARAMETERS
+
+migrate_services_mr:
+  when: manual
+  stage: services_mr
+  only:
+    variables:
+      - $BRANCH_FROM
+      - $BRANCH_TO
+      - $UP_VERSION
+      - $RM_SNAPSHOT
+  script:
+      - python $AUTO_MERGE_SCRIPT $PARAMETERS
+
+migrate_emulators:
+  when: manual
+  stage: emulators
+  only:
+    variables:
+      - $BRANCH_FROM
+      - $BRANCH_TO
+      - $UP_VERSION
+      - $RM_SNAPSHOT
+  script:
+      - python $AUTO_MERGE_SCRIPT $PARAMETERS
+
+migrate_models:
+  when: manual
+  stage: models
+  only:
+    variables:
+      - $BRANCH_FROM
+      - $BRANCH_TO
+      - $UP_VERSION
+      - $RM_SNAPSHOT
+  script:
+      - python $AUTO_MERGE_SCRIPT $PARAMETERS

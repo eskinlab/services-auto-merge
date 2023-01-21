@@ -1,0 +1,4 @@
+argparse
+git-python
+python-gitlab==2.10.1
+atlassian-python-api
