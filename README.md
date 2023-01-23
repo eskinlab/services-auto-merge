@@ -1,6 +1,4 @@
-# Auto Merge
-
-[[_TOC_]]
+# Auto Merge Servises for Gitlab or Bitbucket
 
 ### Description
 
