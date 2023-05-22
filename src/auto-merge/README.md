@@ -4,9 +4,9 @@ This script produces auto merge with two branches.
 This script run from CI/CD pipeline and get environment variables from GitLab.  
 This script run upd_gradle_versions functional.
 
-All user settings is contained in config.py.
+User settings are contained in config.py.
 
-##### To run script: 
+##### To run the script: 
 
 > main.py --system=bitbucket --branch_from=[branch] --branch_to=[branch] --rm_snapshot=True
 
