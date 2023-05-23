@@ -5,7 +5,7 @@
 1. The script execute branches merge and releases in
    Gitlab and BitBucket version control systems
 2. gradle.properties file edit:  
-    -  up version till level specified in file actual_version.ini  
+    -  up version till level specified in the file services.json 
     -  remove word -SNAPSHOT
 3. semantic-build-versioning.gradle file edit
    -  up version till release level
@@ -19,7 +19,7 @@ Functional launch is made from a CI/CD playbook with the following variables.
 | `SYSTEM` | Version control system (gitlab, bitbucket) | gitlab |
 | `BRANCH_FROM` | Branch From | - |
 | `BRANCH_TO` | Branch To | - |
-| `UP_VERSION` | if True - up versions in gradle.properties according to actual_version.ini | False |
+| `UP_VERSION` | if True - up versions in gradle.properties according to services.json | False |
 | `RM_SNAPSHOT` | if True - cut out parameter -SNAPSHOT if the file gradle.properties | False |
 | `UP_SEMANTIC_VERSION` | if True - set/up release version in semantic-build-versioning.gradle| False |
 | `TELEGRAM_CHAT_ID` | ID Telegram chat, set in environment variables | - |
